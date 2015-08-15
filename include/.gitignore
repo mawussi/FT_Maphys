@@ -1,0 +1,7 @@
+# ignore directories containing modules
+s/
+d/
+c/
+z/
+
+

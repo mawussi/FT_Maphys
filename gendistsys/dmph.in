@@ -1,0 +1,26 @@
+ICNTL(1)=6
+ICNTL(2)=6
+ICNTL(4) = 4 # verbosity
+ICNTL(5)=2
+ICNTL(6)=2
+ICNTL(7)=4
+ICNTL(13) = 1
+ICNTL(20)=4
+ICNTL(21)=1
+ICNTL(22)=3
+ICNTL(24)=100
+ICNTL(26)=100
+ICNTL(27)=1
+ICNTL(28)=10
+# Preconditioner - strategy (1:local DENSE 2:local SPARSE 4: No preconditioner)
+RCNTL(21)= 1.e-7
+
+
+
+
+
+
+
+
+
+

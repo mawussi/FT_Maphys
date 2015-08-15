@@ -1,0 +1,105 @@
+###############################################################
+#
+# MPI_INIT_Thread
+#
+###############################################################
+{
+   MPI_INIT_Thread 
+   Memcheck:Param
+   sched_setaffinity(mask)
+   fun:syscall
+   obj:/usr/lib/openmpi/lib/openmpi/mca_paffinity_linux.so
+   obj:/usr/lib/openmpi/lib/openmpi/mca_paffinity_linux.so
+   obj:/usr/lib/openmpi/lib/openmpi/mca_paffinity_linux.so
+   obj:/usr/lib/openmpi/lib/openmpi/mca_paffinity_linux.so
+   fun:opal_paffinity_base_select
+   fun:opal_init
+   fun:orte_init
+   obj:/usr/lib/openmpi/lib/libmpi.so.0.0.1
+   fun:PMPI_Init
+   fun:PMPI_INIT
+   fun:MAIN__
+}
+{
+   MPI_INIT_Thread memory leaks (malloc)	
+   Memcheck:Leak
+   fun:malloc
+   ...
+   fun:PMPI_Init
+}
+{
+   MPI_INIT_Thread memory leaks (calloc)	
+   Memcheck:Leak
+   fun:calloc
+   ...
+   fun:PMPI_Init
+}
+{
+   MPI_INIT_Thread memory leaks (calloc)	
+   Memcheck:Leak
+   fun:realloc
+   ...
+   fun:PMPI_Init
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   fun:realloc
+   ...
+   fun:mca_*
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   fun:malloc
+   ...
+   fun:mca_*
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   fun:calloc
+   ...
+   fun:mca_*
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   fun:malloc
+   ...
+   fun:orte_*
+}
+
+
+###############################################################
+#
+# Initialisation of mumps
+#
+###############################################################
+
+{
+   Call to  mumps with JOB=-1, in sds
+   Memcheck:Cond
+   fun:cmumps_
+   fun:__cmph_sds_mumps_mod_MOD_cmph_mumps_set_matrix
+}
+{
+   Call to  mumps with JOB=-1, in sds
+   Memcheck:Cond
+   fun:dmumps_
+   fun:__dmph_sds_mumps_mod_MOD_dmph_mumps_set_matrix
+}
+{
+   Call to  mumps with JOB=-1, in sds
+   Memcheck:Cond
+   fun:smumps_
+   fun:__smph_sds_mumps_mod_MOD_smph_mumps_set_matrix
+}
+{
+   Call to  mumps with JOB=-1, in sds
+   Memcheck:Cond
+   fun:zmumps_
+   fun:__zmph_sds_mumps_mod_MOD_zmph_mumps_set_matrix
+}
+
+

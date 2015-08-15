@@ -1,0 +1,10 @@
+# generated objects
+*.a
+*.o
+*.mod
+
+# temporary files
+*.bk*
+*~
+*TAGS
+
