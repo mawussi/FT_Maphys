@@ -47,3 +47,8 @@ OR
 #### Hardware locality
 * **Hwloc** for more information on the hardware topology,  available at [hwloc-1.11.3.tar.gz](https://www.open-mpi.org/software/hwloc/v1.11/downloads/hwloc-1.11.3.tar.gz)
 
+## Installation 
+1. git clone https://github.com/mawussi/FT_Maphys.git
+2. cd FT_Maphys
+3. configuration in make.inc, it consists of providing path to the required libraries 
+4. make and make install
